@@ -1,12 +1,10 @@
 # 如何在功能测试中使用分析器
 
+重点推荐一个只测试 Response 的功能测试。但是如果您写了监视您的生产服务器的功能测试，您也许想要写一个分析器数据的测试，因为它给了您一个很好的方法来检查各种事情并执行一些度量。
 
+[Symfony 分析器](http://symfony.com/doc/current/cookbook/profiler/index.html)为每一个请求采集大量数据。用这些数据来检查数据可调用的次数，框架中花费的时间，等等。但在断言之前，启动分析器并检查它，是确实很有效的（在在 **test** 环境中默认启动）。
 
-重点推荐一个功能测试只测试 Response。但是如果您写了监视您的生产服务器的功能测试，您也许想要写一个分析器数据的测试，因为它给了您一个很好的方法来检查各种事情并执行一些度量。
-
-[Symfony 分析器](http://symfony.com/doc/current/cookbook/profiler/index.html)为每一个请求采集大量数据。用这些数据来检查数据可调用的次数，框架中花费的时间，等等。但在写断言之前，启动分析器并检查它，是确实很有效的（它在在 **test** 环境中默认启动）。
-
-```PHP
+```
 class HelloControllerTest extends WebTestCase
 {
     public function testIndex()
@@ -41,7 +39,7 @@ class HelloControllerTest extends WebTestCase
 
 如果测试因为分析器数据（例如太多的数据库问题）而失败，您可能想要在测试结束后用 Web Profiler 来分析请求，如果您将 token 嵌入到错误信息中，这是很容易完成的：
 
-```PHP
+```
 $this->assertLessThan(
     30,
     $profile->getCollector('db')->getQueryCount(),
@@ -62,7 +60,9 @@ $this->assertLessThan(
 
 避免在每次测试中都收集数据，您可以将收集参数设置为 false：
 
-```YAML
+YAML:
+
+```
 # app/config/config_test.yml
 
 # ...
@@ -72,7 +72,9 @@ framework:
         collect: false
 ```
 
-```XML
+XML:
+
+```
 <!-- app/config/config.xml -->
 <?xml version="1.0" encoding="UTF-8" ?>
 <container xmlns="http://symfony.com/schema/dic/services"
@@ -89,7 +91,9 @@ framework:
 </container>
 ```
 
-```PHP
+PHP:
+
+```
 // app/config/config.php
 
 // ...
