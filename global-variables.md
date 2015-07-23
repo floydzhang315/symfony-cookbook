@@ -2,7 +2,9 @@
 
 有时您想要一个对您所用的所有模板都可用的变量。这在您的 **app/config/config.yml** 文件夹里是可行的。
 
-```YAML
+YAML:
+
+```
 # app/config/config.yml
 twig:
     # ...
@@ -10,7 +12,9 @@ twig:
         ga_tracking: UA-xxxxx-x
 ```
 
-```XML
+XML:
+
+```
 <!-- app/config/config.xml -->
 <twig:config>
     <!-- ... -->
@@ -18,7 +22,9 @@ twig:
 </twig:config> 
 ```
 
-```PHP
+PHP:
+
+```
 // app/config/config.php
 $container->loadFromExtension('twig', array(
      // ...
@@ -46,21 +52,27 @@ parameters:
     ga_tracking: UA-xxxxx-x
 ```
 
-```YAML
+YAML:
+
+```
 # app/config/config.yml
 twig:
     globals:
         ga_tracking: "%ga_tracking%"
 ```
 
-```XML
+XML:
+
+```
 <!-- app/config/config.xml -->
 <twig:config>
     <twig:global key="ga_tracking">%ga_tracking%</twig:global>
 </twig:config>
 ```
 
-```PHP
+PHP:
+
+```
 // app/config/config.php
 $container->loadFromExtension('twig', array(
      'globals' => array(
@@ -77,9 +89,11 @@ $container->loadFromExtension('twig', array(
 
 > 服务不会延迟加载。换句话说，当 Twig 被加载时，即使您从来没有使用全局变量，您的服务也会被实例化。
 
-要将服务定义为全局 Twig 变量，以 **@** 为前缀的字符串。这应该是熟悉的，因为它是在服务配置中使用的相同语法。
+要将服务定义为全局 Twig 变量，以 **@** 为前缀的字符串。这应该是熟悉的，因为它是在服务配置中使用相同语法。
 
-```YAML
+YAML:
+
+```
 # app/config/config.yml
 twig:
     # ...
@@ -87,7 +101,9 @@ twig:
         user_management: "@acme_user.user_management"
 ```
 
-```XML
+XML:
+
+```
 <!-- app/config/config.xml -->
 <twig:config>
     <!-- ... -->
@@ -95,7 +111,9 @@ twig:
 </twig:config>
 ```
 
-```PHP
+PHP:
+
+```
 // app/config/config.php
 $container->loadFromExtension('twig', array(
      // ...
@@ -107,4 +125,4 @@ $container->loadFromExtension('twig', array(
 
 ## 使用 Twig 扩充
 
-如果全局变量要设置更为复杂的话-说一个对象-，那么您就不能用上面的方法了。替代上面的方法，您需要创建一个 ![Twig 扩充](http://symfony.com/doc/current/reference/dic_tags.html#reference-dic-tags-twig-extension)并且在 **getglobals** 方法返回一个全局变量条目。
+如果全局变量要设置更为复杂的话 - 比如说一个对象 - 那么您就不能用上面的方法了。替代上面的方法，您需要创建一个 [Twig 扩充](http://symfony.com/doc/current/reference/dic_tags.html#reference-dic-tags-twig-extension)并且在 **getglobals** 方法返回一个全局变量条目。
