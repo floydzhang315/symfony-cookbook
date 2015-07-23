@@ -1,7 +1,5 @@
 # 如何测试与数据库交互的代码
 
-
-
 如果您的代码和数据库交互，例如从中读取数据或者写入数据，您需要把这个考虑进去来调整测试。有很多方法可以解决这个问题。您可以创建一个 Repository 的仿制品，然后用它来返回预期的对象。在功能测试中，您可能需要准备一个有预定值的测试数据库来确保您的测试始终有相同的数据来使用。
 
 > 如果您想直接测试您的查询（queries），看[如何测试 Doctrine 仓库](http://symfony.com/doc/current/cookbook/testing/doctrine.html)。
@@ -14,7 +12,7 @@
 
 假设您要测试的类看起来像这样：
 
-```PHP
+```
 namespace AppBundle\Salary;
 
 use Doctrine\Common\Persistence\ObjectManager;
@@ -41,7 +39,7 @@ class SalaryCalculator
 
 由于 **ObjectManager** 通过构造函数被注入类里面，在一个测试内很容易传递（pass）一个模拟类：
 
-```PHP
+```
 use AppBundle\Salary\SalaryCalculator;
 
 class SalaryCalculatorTest extends \PHPUnit_Framework_TestCase
@@ -89,7 +87,9 @@ class SalaryCalculatorTest extends \PHPUnit_Framework_TestCase
 
 要做到这一点，您可以指定一个数据库配置，覆盖默认的配置：
 
-```YAML
+YAML:
+
+```
 # app/config/config_test.yml
 doctrine:
     # ...
@@ -100,7 +100,9 @@ doctrine:
         password: testdb
 ```
 
-```XML
+XML:
+
+```
 <!-- app/config/config_test.xml -->
 <doctrine:config>
     <doctrine:dbal
@@ -112,7 +114,9 @@ doctrine:
 </doctrine:config>
 ```
 
-```PHP
+PHP:
+
+```
 // app/config/config_test.php
 $configuration->loadFromExtension('doctrine', array(
     'dbal' => array(
