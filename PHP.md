@@ -2,11 +2,12 @@
 
 Symfony 默认 Twig 作为其模板引擎，但如果你想，你仍然可以使用纯 PHP 代码。在 Symfony 中，两种模板引擎都同样支持。Symfony 中在 PHP 上添加了一些不错的功能，使得使用 PHP 来编写模板更强大。
 
-## 呈现PHP模板
+## 呈现 PHP 模板
 
 如果你想使用 PHP 模板引擎，首先，请确保在应用程序配置文件中启用它：
 
 YAML：
+
 ```
 # app/config/config.yml
 framework:
@@ -16,6 +17,7 @@ framework:
 ```
 
 XML：
+
 ```
 <!-- app/config/config.xml -->
 <framework:config>
@@ -28,6 +30,7 @@ XML：
 ```
 
 PHP：
+
 ```
 $container->loadFromExtension('framework', array(
     // ...
@@ -70,6 +73,7 @@ public function indexAction($name)
 ```
 
 > 同时启用 **php** 和 **twig** 模板引擎是允许的，但它会对您的应用程序产生不良的副作用：Twig 命名空间的 **@** 符号将不再支持 **render()** 方法：
+
 > ```
 > public function indexAction()
 > {
@@ -82,6 +86,7 @@ public function indexAction($name)
 >     $this->render('AppBundle:Default:index.html.twig');
 > }
 > ```
+
 > ```
 > {# inside a Twig template, namespaced templates work as expected #}
 > {{ include('@App/Default/index.html.twig') }}
@@ -237,7 +242,7 @@ Symfony 的模板系统可以很容易地通过助手（helpers）扩展。Helpe
 
 ## 创建两个页面之间的链接
 
-说到 web 应用程序，创建页面之间的联系是必须的。作为对模板中的 URLs 进行硬编码的替换，**路由**助手知道如何生成基于路由配置的 URLs。这样，所有你可以很容易地更改配置更新的 URLs：
+说到 web 应用程序，创建页面之间的联系是必须的。作为对模板中的 URLs 进行硬编码的替换，**路由**助手知道如何生成基于路由配置的 URL。这样，所有你可以很容易地更改配置更新的 URL：
 
 ```
 <a href="<?php echo $view['router']->generate('hello', array('name' => 'Thomas')) ?>">
