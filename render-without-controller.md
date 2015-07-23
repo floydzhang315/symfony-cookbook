@@ -1,6 +1,6 @@
 # 如何不用一个自定义的控制器渲染一个模板
 
-通常，当您需要创建一个页面，您需要创建一个控制器并且从该控制器中呈现模板。但如果您仅仅呈现一个简单的模板，并且不需要传递给它的任何数据，则完全没必要创建控一个制器，通过使用内置的 **FrameworkBundle:Template:template** 控制器就可以达到目的。
+通常，当您需要创建一个页面，您需要创建一个控制器并且从该控制器中呈现模板。但如果您仅仅呈现一个简单的模板，并且不需要传递给它的任何数据，则完全没必要创建一个控制器，通过使用内置的 **FrameworkBundle:Template:template** 控制器就可以达到目的。
 
 例如，假设您想要呈现 **static/privacy.html.twig** 模板，并且不需要给它传递任何变量。那么您可以这样做而无需创建一个控制器：
 
@@ -45,9 +45,9 @@ $collection->add('acme_privacy', new Route('/privacy', array(
 return $collection;
 ```
 
-**FrameworkBundle:Template:template** 控制器将简单地呈现您把它当做默认模板传递的任何模板。
+**FrameworkBundle:Template:template** 控制器将简单地呈现给您把它当做默认模板传递的任何模板。
 
-当然可以也使用这个技巧把控制器嵌入到模板中来展现这个模板。但由于把控制器嵌入到模板内的目的通常是在自定义的控制器中准备某些数据，这可能只是在您想要缓存这个页面的一部分的时候有用 (请参见[缓存静态模板](http://symfony.com/doc/current/cookbook/templating/render_without_controller.html#cookbook-templating-no-controller-caching))。
+当然可以也使用这个技巧把控制器嵌入到模板中来展现这个模板。但由于把控制器嵌入到模板内的目的通常是在自定义的控制器中准备某些数据，这可能只是在您想要缓存这个页面的一部分的时候有用(请参见[缓存静态模板](http://symfony.com/doc/current/cookbook/templating/render_without_controller.html#cookbook-templating-no-controller-caching))。
 
 Twig：
 
@@ -116,4 +116,4 @@ return $collection;
 
 **MaxAge** 和 **sharedAge** 的值用于修改在控制器中创建的响应对象。对缓存的详细信息，请参阅 [HTTP 缓存](http://symfony.com/doc/current/book/http_cache.html)。
 
-这里也有一个**私有**变量 (此处未显示)。在默认情况下，响应将予以公开，只要传递了 **maxAge** 或 **sharedAge** 。如果设置为 **true**，响应将被标记为私有。
+这里也有一个**私有**变量 (此处未显示)。在默认情况下，响应将予以公开，只要它传递了 **maxAge** 或 **sharedAge** 。如果设置为 **true**，响应将被标记为私有。
