@@ -1,11 +1,10 @@
 # 如何在功能测试中用 Token 模拟认证
 
-
 功能测试中的认证请求可能会延缓程序组。尤其当使用 **form_login** 的时候，它可能成为问题，因为它需要额外的填写和提交表单的需求。
 
 解决办法之一是在测试环境中像[如何在功能测试中模拟 HTTP 认证](http://symfony.com/doc/current/cookbook/testing/http_authentication.html)中解释的用法一样来设置防火墙使用 **http_basic**。另一个方法是您自己创建一个 token 并将它储存在一个会话中。当您这样做的时候，您必须确认一个适当的 cookie 随着一个请求发送。下面的例子演示了这一技术：
 
-```PHP
+```
 // src/AppBundle/Tests/Controller/DefaultControllerTest.php
 namespace Appbundle\Tests\Controller;
 
