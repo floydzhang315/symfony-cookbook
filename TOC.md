@@ -149,7 +149,7 @@
    - [配置 Session 文件的保存目录](sessions-directory.md) 
    - [在遗留的应用上使用 Symfony Session](php-bridge.md) 
    - [限制 Session 元数据的写入](limit-metadata-writes.md)
-   - **不翻译**[(configuration)如何使用 PdoSessionHandler 在数据库中存储 Session](pdo-session-storage.md)
+   - **不翻译**[(configuration)如何使用 PdoSessionHandler 在数据库中存储 Session](pdosessionhandler-store-sessions.md)
    - [避免匿名用户开始 Session 会话](avoid-session-start.md)
  - PSR-7   袁泽林 -- 已校对
    - [The PSR-7 Bridge](psr7.md)
