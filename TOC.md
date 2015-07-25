@@ -1,5 +1,6 @@
  - Assetic
    - [如何使用 Assetic 进行资产管理](assetic-assetmgmt.md)
+   - [使用 PHP 库联合，编译和最小化 Web 资产](assert-php.md)
    - [如何裁剪 CSS/JS 文件(使用 UglifyJS 和 UglifyCSS)](minify-cssjs.md)
    - [如何使用 YUI Compressor 裁剪 Javascripts 和 Stylesheets](minify-js-stylesheet.md)
    - [如何使用 Assetic 和 Twig Functions 进行图像优化](assetic-image-optimization.md)
@@ -8,6 +9,7 @@
    - [如何安装第三方 Bundles](install-3rdparty-bundles.md)
    - [可复用 Bundles 的最佳实践](bestpractice-reusable-bundles.md)
    - [如何使用 Bundle 的继承来重写部分 Bundle](override-parts-bundle.md)
+   - [如何重写部分 Bundle](override.md)
    - [如何移除 AcmeDemoBundle](remove-acmedemobundle.md)
    - [如何在 Bundle 内部加载服务配置](load-service-configuration.md)
    - [如何为一个 Bundle 创建友好的配置](create-friendly-configuration.md)
@@ -57,7 +59,7 @@
    - [如何提供为多个Doctrine的实现提供模型类](provide-model-class.md)
    - [如何实现一个简单的注册表单](implement-simple-registration.md)
    - [控制台命令](console-commands.md)
-   - [(configuration)如何在数据库中使用 PdoSessionHandler 存储 Sessions](pdosessionhandler-store-sessions.md)
+   - **不翻译**[(configuration)如何在数据库中使用 PdoSessionHandler 存储 Sessions](pdosessionhandler-store-sessions.md)
  - 电子邮件
    - [如何发送一封电子邮件](email.md)
    - [如何使用 Gmail 发送电子邮件](gmail.md)
@@ -69,7 +71,7 @@
    - [如何在过滤器的前后设置事件分发器](before-after-filters.md)
    - [如何以非继承方式扩展一个类](class-extension.md)
    - [如何以非继承方式自定义方法](method-behavior.md)
-   - [(service container)如何创建事件监听器](event-listener.md)
+   - **不翻译**[(service container)如何创建事件监听器](event-listener.md)
  - 表达式
    - [如何在安全，路由，服务和验证中使用表达式](expressions.md)
  - 表单
@@ -83,8 +85,8 @@
    - [如何对表单单元测试](unit-testing.md)
    - [如何为表单类配置空数据](use-empty-data.md)
    - [如何使用 submit() 函数处理表单提交](direct-submit.md)
-   - [(validation)如何创建一个自定义验证限制](custom-constraint.md)
-   - [(doctrine)如何使用 Doctrine 处理文件上传](file-upload-doctrine.md)
+   - **不翻译**[(validation)如何创建一个自定义验证限制](custom-constraint.md)
+   - **不翻译**[(doctrine)如何使用 Doctrine 处理文件上传](file-upload-doctrine.md)
  - 前端
    - [使用 Bower 安装 Symfony](bower.md)
  - 日志
@@ -101,7 +103,7 @@
  - 请求
    - [如何配置 Symfony 使其工作在负载均衡和反转代理](load-balancer-reverse-proxy.md)
    - [如何注册一个新的请求格式和 Mime 类型](mime-type.md)
-   - [(session)在用户的 Session 中使用局部 "Sticky"](locale-sticky-session.md)
+   - **不翻译**[(session)在用户的 Session 中使用局部 "Sticky"](locale-sticky-session.md)
  - 路由
    - [如何强制路由总是使用 HTTPS 或者 HTTP](scheme.md)
    - [如何在路由参数中允许"/"字符](slash-in-parameter.md)
@@ -111,7 +113,7 @@
    - [如何创建一个自定义路由加载器](custom-route-loader.md)
    - [使用结尾反斜线重定向 URL](redirect-trailing-slash.md)
    - [如何从路由向控制器传输额外的信息](extra-information.md)
- - 安全  
+ - 安全
    - [如何建立一个传统的登录表单](form-login-setup.md)
    - [如何从数据库(实体提供者)读取安全用户](entity-provider.md)
    - [如何添加 "记住我" 登录功能](remember-me.md)
@@ -135,19 +137,19 @@
    - [如何动态选择密码加密算法](named-encoders.md)
    - [安全访问控制是如何工作的](access-control.md)
    - [如何使用多用户提供者](multiple-user-providers.md)
- - 序列化  
+ - 序列化
    - [如何使用序列化](serializer.md)
- - 服务容器     
+ - 服务容器
    - [如何创建事件监听器](event-listener.md)
    - [如何使用作用域](scopes.md)
    - [如何在 Bundle 中使用 Compiler Passes](compiler-passes.md)
  - 会话
    - [会话代理实例](proxy-examples.md)
-   - [在用户的 Session 中使用局部 "Sticky"](locale-sticky-session.md)
-   - [配置 Session 文件的保存目录](sessions-directory.md)
-   - [在遗留的应用上使用 Symfony Session](php-bridge.md)
+   - [在用户的 Session 中使用局部 "Sticky"](locale-sticky-session.md) 
+   - [配置 Session 文件的保存目录](sessions-directory.md) 
+   - [在遗留的应用上使用 Symfony Session](php-bridge.md) 
    - [限制 Session 元数据的写入](limit-metadata-writes.md)
-   - [(configuration)如何使用 PdoSessionHandler 在数据库中存储 Session](pdo-session-storage.md)
+   - **不翻译**[(configuration)如何使用 PdoSessionHandler 在数据库中存储 Session](pdosessionhandler-store-sessions.md)
    - [避免匿名用户开始 Session 会话](avoid-session-start.md)
  - PSR-7
    - [The PSR-7 Bridge](psr7.md)
@@ -167,8 +169,8 @@
    - [如何测试与数据库交互的代码](database.md)
    - [如何测试 Doctrine 仓库](doctrine.md)
    - [如何在运行测试之前自定义引导过程](bootstrap.md)
-   - [(email)如何在功能测试中测试一封电子邮件被发送](testing.md)
-   - [(form)如何对表单单元测试](unit-testing.md)
+   - **不翻译**[(email)如何在功能测试中测试一封电子邮件被发送](testing.md)
+   - **不翻译**[(form)如何对表单单元测试](unit-testing.md)
  - 升级
    - [升级一个补丁版本](patch-version.md)
    - [升级一个副版本](minor-version.md)
@@ -177,11 +179,14 @@
  - 验证
    - [如何创建一个自定义的验证限制](custom-constraint.md)
    - [如何处理不同的错误级别](severity.md)
- - Web 服务器 
+ - Web 服务器
    - [如何使用内建的 PHP Web 服务器](built-in.md)
-   - [(configuration) 配置一个 Web 服务器](config-web-server.md)
- - Web 服务   
+   - **不翻译**[(configuration) 配置一个 Web 服务器](config-web-server.md)
+ - Web 服务
    - [如何在一个 Symfony 控制器中创建一个 SOAP 的 Web 服务](php-soap-extension.md)
  - 工作流
    - [如何在 Git 中创建并保存一个 Symfony 项目](new-project-git.md)
    - [如何在 SubVersion 中创建并保存一个 Symfony 项目](new-project-svn.md)
+   
+
+## [原文地址 http://symfony.com/doc/current/cookbook/index.html](http://symfony.com/doc/current/cookbook/index.html)
